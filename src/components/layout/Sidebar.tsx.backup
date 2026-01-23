@@ -1,0 +1,127 @@
+﻿import React from 'react';
+import { 
+  Home, 
+  PawPrint, 
+  Calendar, 
+  FileText, 
+  Settings, 
+  Users,
+  Heart,
+  Bell,
+  LogOut
+} from 'lucide-react';
+
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+const menuItems = [
+  { icon: <Home className="h-5 w-5" />, label: 'Dashboard', active: true },
+  { icon: <PawPrint className="h-5 w-5" />, label: 'Meus Pets', count: 3 },
+  { icon: <Calendar className="h-5 w-5" />, label: 'Agenda', count: 2 },
+  { icon: <FileText className="h-5 w-5" />, label: 'Relatórios' },
+  { icon: <Heart className="h-5 w-5" />, label: 'Saúde' },
+  { icon: <Bell className="h-5 w-5" />, label: 'Lembretes', count: 1 },
+  { icon: <Users className="h-5 w-5" />, label: 'Veterinários' },
+  { icon: <Settings className="h-5 w-5" />, label: 'Configurações' },
+];
+
+export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
+  return (
+    <>
+      {/* Overlay para mobile */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={onClose}
+        />
+      )}
+
+      <aside className={`
+        fixed lg:static inset-y-0 left-0 z-50
+        w-64 bg-white border-r border-gray-200
+        transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+        lg:translate-x-0 transition-transform duration-300
+        flex flex-col
+      `}>
+        {/* Logo */}
+        <div className="p-6 border-b border-gray-200">
+          <div className="flex items-center space-x-3">
+            <div className="h-10 w-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+              <PawPrint className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold text-gray-900">Pet Manager</h2>
+              <p className="text-xs text-gray-500">Professional</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Menu */}
+        <nav className="flex-1 p-4 overflow-y-auto">
+          <div className="space-y-1">
+            {menuItems.map((item, index) => (
+              <button
+                key={index}
+                className={`
+                  w-full flex items-center justify-between px-4 py-3 rounded-lg
+                  transition-colors duration-200
+                  ${item.active 
+                    ? 'bg-primary-50 text-primary-700 border-l-4 border-primary-500' 
+                    : 'text-gray-700 hover:bg-gray-100'
+                  }
+                `}
+              >
+                <div className="flex items-center space-x-3">
+                  {item.icon}
+                  <span className="font-medium">{item.label}</span>
+                </div>
+                {item.count !== undefined && (
+                  <span className="bg-primary-100 text-primary-800 text-xs font-semibold px-2 py-1 rounded-full">
+                    {item.count}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* Estatísticas rápidas */}
+          <div className="mt-8 p-4 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl">
+            <h3 className="text-sm font-semibold text-gray-700 mb-3">Resumo</h3>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">Total de Pets</span>
+                <span className="font-bold text-gray-900">3</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">Consultas Hoje</span>
+                <span className="font-bold text-gray-900">0</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">Vacinas Pendentes</span>
+                <span className="font-bold text-red-600">1</span>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        {/* Rodapé */}
+        <div className="p-4 border-t border-gray-200">
+          <button className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+            <div className="flex items-center space-x-3">
+              <div className="h-8 w-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold">
+                DE
+              </div>
+              <div className="text-left">
+                <p className="text-sm font-medium">Dr. Eng. Computação</p>
+                <p className="text-xs text-gray-500">Admin</p>
+              </div>
+            </div>
+            <LogOut className="h-4 w-4 text-gray-400" />
+          </button>
+        </div>
+      </aside>
+    </>
+  );
+}

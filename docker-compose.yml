@@ -1,0 +1,15 @@
+﻿version: '3.8'
+services:
+  pet-manager-frontend:
+    build: .
+    container_name: pet-manager-frontend
+    ports:
+      - "4200:80"
+    environment:
+      - API_URL=https://pet-manager-api.geia.vip/v1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped

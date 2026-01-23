@@ -1,0 +1,25 @@
+﻿/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.pet-card {
+  transition: transform 0.2s;
+  
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.health-check {
+  background-color: #10b981;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
