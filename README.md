@@ -76,61 +76,61 @@ REQUISITOS SÊNIOR
 🚀 COMO EXECUTAR
 OPÇÃO 1 - DOCKER (RECOMENDADO)
 text
-# Clonar repositório
+Clonar repositório
 git clone https://github.com/souzagenessy-spec/GENESSY-ASSUNCAO-SOUZA-864552.git
 
-# Entrar no diretório
+ Entrar no diretório
 cd GENESSY-ASSUNCAO-SOUZA-864552
 
-# Subir containers
+ Subir containers
 docker-compose up --build
 
-# Acessar aplicação
-# http://localhost:3000
+ Acessar aplicação
+ http://localhost:3000
 OPÇÃO 2 - DESENVOLVIMENTO LOCAL
 text
-# Instalar dependências
+ Instalar dependências
 cd frontend
 npm install
 
-# Executar servidor de desenvolvimento
+ Executar servidor de desenvolvimento
 npm run dev
 
-# Executar testes
+ Executar testes
 npm test
 
-# Build para produção
+ Build para produção
 npm run build
 📁 ESTRUTURA DO PROJETO
 text
 GENESSY-ASSUNCAO-SOUZA-864552/
-├── frontend/           # Aplicação React/TypeScript
+├── frontend/            Aplicação React/TypeScript
 │   ├── src/
-│   │   ├── components/ # Componentes reutilizáveis
-│   │   ├── pages/      # Páginas da aplicação
-│   │   ├── services/   # Serviços API (Facade Pattern)
-│   │   ├── contexts/   # Gerenciamento de estado
-│   │   ├── hooks/      # Custom hooks
-│   │   ├── utils/      # Utilitários
-│   │   └── types/      # Tipos TypeScript
+│   │   ├── components/  Componentes reutilizáveis
+│   │   ├── pages/       Páginas da aplicação
+│   │   ├── services/    Serviços API (Facade Pattern)
+│   │   ├── contexts/    Gerenciamento de estado
+│   │   ├── hooks/       Custom hooks
+│   │   ├── utils/       Utilitários
+│   │   └── types/       Tipos TypeScript
 │   ├── package.json
 │   └── tsconfig.json
-├── Dockerfile          # Configuração Docker
-├── docker-compose.yml  # Orquestração
-└── README.md          # Este arquivo
+├── Dockerfile           Configuração Docker
+├── docker-compose.yml   Orquestração
+└── README.md           Este arquivo
 🧪 TESTES
 text
-# Executar todos os testes
+ Executar todos os testes
 npm test
 
-# Executar com cobertura
+ Executar com cobertura
 npm run test:coverage
 
-# Testes específicos
+ Testes específicos
 npm test -- --testPathPattern=PetList
 🐳 DOCKER CONFIGURATION
 text
-# Multi-stage build para otimização
+ Multi-stage build para otimização
 FROM node:18-alpine as builder
 WORKDIR /app
 COPY frontend/package*.json ./
@@ -177,3 +177,4 @@ Perfil: Front-End
 Data de Entrega: 05/02/2026
 
 Validade: 24 meses (conforme item 14.1 do edital)
+
