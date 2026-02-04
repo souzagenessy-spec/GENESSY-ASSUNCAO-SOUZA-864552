@@ -1,0 +1,49 @@
+import { Routes, Route, Navigate } from "react-router-dom"
+import { PrivateRoute } from "../components/Shared/PrivateRoute"
+import Login from "./pages/Login/Login"
+import Dashboard from "./pages/Dashboard/Dashboard"
+import Layout from "./components/Layout/Layout"
+
+// Pets
+import PetList from "./pages/Pets/PetList"
+import PetDetails from "./pages/Pets/PetDetails"
+import PetForm from "./pages/Pets/PetForm"
+
+// Tutores
+import TutorList from "./pages/Tutors/TutorList"
+import TutorDetails from "./pages/Tutors/TutorDetails"
+import TutorForm from "./pages/Tutors/TutorForm"
+
+export function AppRoutes() {
+  return (
+    <Routes>
+      {/* Pública */}
+      <Route path="/login" element={<Login />} />
+      
+      {/* Protegidas com Layout */}
+      <Route path="/" element={
+        <PrivateRoute>
+          <Layout />
+        </PrivateRoute>
+      }>
+        <Route index element={<Navigate to="/dashboard" replace />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        
+        {/* Pets */}
+        <Route path="pets" element={<PetList />} />
+        <Route path="pets/new" element={<PetForm />} />
+        <Route path="pets/:id" element={<PetDetails />} />
+        <Route path="pets/edit/:id" element={<PetForm />} />
+        
+        {/* Tutores */}
+        <Route path="tutors" element={<TutorList />} />
+        <Route path="tutors/new" element={<TutorForm />} />
+        <Route path="tutors/:id" element={<TutorDetails />} />
+        <Route path="tutors/edit/:id" element={<TutorForm />} />
+      </Route>
+      
+      {/* Redirecionamentos */}
+      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+    </Routes>
+  )
+}

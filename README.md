@@ -5,7 +5,7 @@ Edital 001/2026/SEPLAG - Analista TI Engenheiro da Computação (Sênior)
 📋 DADOS DO CANDIDATO
 Nome Completo: Genessy Assunção Souza
 
-CPF: 864.552.651-49
+CPF: 864.552.***-**
 
 Telefone: (65) 99288-9074
 
@@ -177,4 +177,89 @@ Perfil: Front-End
 Data de Entrega: 05/02/2026
 
 Validade: 24 meses (conforme item 14.1 do edital)
+
+
+## ✅ Funcionalidades Implementadas
+
+### Sistema de Autenticação
+- Login com JWT
+- Refresh token automático
+- Rotas protegidas
+- Contexto de autenticação
+
+### Gestão de Pets
+- ✅ Listagem de pets com paginação
+- ✅ Busca por nome
+- ✅ Cards com foto, nome, espécie e idade
+- ✅ Tela de detalhes do pet
+- ✅ Cadastro de novos pets
+- ✅ Edição de pets existentes
+- ✅ Upload de fotos (mockado)
+
+### Gestão de Tutores
+- ✅ Listagem de tutores
+- ✅ Cadastro de novos tutores
+- ✅ Edição de tutores
+- ✅ Vinculação pets-tutores
+- ✅ Upload de fotos (mockado)
+
+### Interface
+- ✅ Dashboard com estatísticas
+- ✅ Sidebar responsiva
+- ✅ Header com notificações
+- ✅ Layout responsivo (mobile/desktop)
+- ✅ Componentes reutilizáveis
+
+## 🚀 Como Executar
+
+### Opção 1: Desenvolvimento completo
+\\\ash
+# Instalar dependências
+npm install
+
+# Iniciar frontend e mock API simultaneamente
+npm run dev:all
+\\\
+
+### Opção 2: Apenas frontend
+\\\ash
+npm install
+npm run dev
+\\\
+
+### Opção 3: Apenas mock API
+\\\ash
+npm run mock:api
+\\\
+
+## 🌐 Endpoints da API Mock
+
+- Frontend: http://localhost:5173
+- Mock API: http://localhost:3001
+- Login: POST http://localhost:3001/autenticacao/login
+- Pets: GET http://localhost:3001/v1/pets
+- Tutores: GET http://localhost:3001/v1/tutores
+
+## 🐳 Docker
+\\\ash
+# Build da imagem
+docker build -t pets-mt-frontend .
+
+# Executar com Docker Compose
+docker-compose up
+\\\
+
+## 📋 Requisitos Atendidos (Anexo II-B)
+
+- [x] Tela Inicial - Listagem de Pets
+- [x] Tela de Detalhamento do Pet  
+- [x] Tela de Cadastro/Edição de Pet
+- [x] Tela de Cadastro/Edição de Tutor
+- [x] Upload de imagens (mockado)
+- [x] Autenticação JWT
+- [x] Paginação
+- [x] Busca por nome
+- [x] Componentização
+- [x] TypeScript
+- [x] Dockerização
 

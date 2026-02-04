@@ -1,34 +1,37 @@
-﻿{
-    "devDependencies":  {
-                            "@angular-devkit/build-angular":  "^17.0.0",
-                            "@types/jasmine":  "~4.3.0",
-                            "@angular/cli":  "^17.0.0",
-                            "karma":  "~6.4.0",
-                            "karma-chrome-launcher":  "~3.2.0",
-                            "karma-jasmine-html-reporter":  "~2.1.0",
-                            "@angular/compiler-cli":  "^17.0.0",
-                            "karma-coverage":  "~2.2.0",
-                            "typescript":  "~5.2.0",
-                            "karma-jasmine":  "~5.1.0",
-                            "jasmine-core":  "~4.6.0"
-                        },
-    "name":  "pet-manager-frontend",
-    "version":  "1.0.0",
-    "dependencies":  {
-                         "tslib":  "^2.3.0",
-                         "zone.js":  "~0.14.0",
-                         "rxjs":  "~7.8.0",
-                         "@angular/common":  "^17.0.0",
-                         "@angular/forms":  "^17.0.0",
-                         "@angular/router":  "^17.0.0",
-                         "@angular/platform-browser":  "^17.0.0",
-                         "@angular/core":  "^17.0.0"
-                     },
-    "scripts":  {
-                    "test":  "ng test",
-                    "lint":  "ng lint",
-                    "build":  "ng build",
-                    "test:coverage":  "ng test --code-coverage",
-                    "start":  "ng serve"
-                }
+{
+    "name": "pets-mt-frontend",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite --host 0.0.0.0",
+        "build": "vite build",
+        "preview": "vite preview",
+        "mock:api": "json-server --watch db.json --port 3001 --middlewares ./middleware.js",
+        "dev:all": "concurrently \"npm run dev\" \"npm run mock:api\""
+    },
+    "dependencies": {
+        "@hookform/resolvers": "^5.2.2",
+        "@tanstack/react-query": "^5.90.20",
+        "axios": "^1.6.2",
+        "chart.js": "^4.5.1",
+        "date-fns": "^4.1.0",
+        "jwt-decode": "^4.0.0",
+        "lucide-react": "^0.563.0",
+        "react": "^18.2.0",
+        "react-chartjs-2": "^5.3.1",
+        "react-dom": "^18.2.0",
+        "react-hook-form": "^7.71.1",
+        "react-hot-toast": "^2.6.0",
+        "react-router-dom": "^6.30.3",
+        "zod": "^4.3.6"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^4.2.1",
+        "autoprefixer": "^10.4.16",
+        "concurrently": "^8.2.2",
+        "json-server": "^1.0.0-beta.5",
+        "postcss": "^8.4.32",
+        "tailwindcss": "^3.3.5",
+        "vite": "^5.0.8"
+    }
 }

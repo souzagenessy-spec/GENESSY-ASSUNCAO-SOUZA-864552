@@ -1,0 +1,59 @@
+﻿{
+  "pets": [
+    {
+      "id": "1",
+      "name": "Rex",
+      "species": "dog",
+      "age": 3,
+      "breed": "Labrador",
+      "tutorId": "1",
+      "photoUrl": "https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "2",
+      "name": "Luna",
+      "species": "cat",
+      "age": 2,
+      "breed": "Siames",
+      "tutorId": "2",
+      "photoUrl": "https://images.unsplash.com/photo-1514888286974-6d03bde4ba42?w-400&h=400&fit=crop"
+    },
+    {
+      "id": "3",
+      "name": "Thor",
+      "species": "dog",
+      "age": 5,
+      "breed": "Golden Retriever",
+      "tutorId": "3",
+      "photoUrl": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=400&fit=crop"
+    }
+  ],
+  "tutors": [
+    {
+      "id": "1",
+      "name": "João da Silva",
+      "phone": "(65) 99999-9999",
+      "address": "Rua Exemplo, 123 - Centro - Cuiabá/MT",
+      "photoUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "2",
+      "name": "Maria Santos",
+      "phone": "(65) 98888-8888",
+      "address": "Av. Principal, 456 - Jardim América - Cuiabá/MT",
+      "photoUrl": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop"
+    },
+    {
+      "id": "3",
+      "name": "Carlos Oliveira",
+      "phone": "(65) 97777-7777",
+      "address": "Rua das Flores, 789 - CPA - Cuiabá/MT",
+      "photoUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
+    }
+  ],
+  "tutorPets": [
+    { "tutorId": "1", "petId": "1" },
+    { "tutorId": "2", "petId": "2" },
+    { "tutorId": "3", "petId": "3" }
+  ]
+}
