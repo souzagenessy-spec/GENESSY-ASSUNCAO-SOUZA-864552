@@ -1,13 +1,14 @@
-export interface Pet {
-  id: number;
-  name: string;
-  type: string;
-  breed: string;
-  age: number;
-  owner?: string;
-  status: string;
-  createdAt: string;
-  notes?: string;
+﻿export interface Pet {
+  id: number
+  name: string
+  breed: string
+  status: "ativo" | "adotado"
+  age: number
+  type: "cachorro" | "gato" | "pássaro"
+  ownerName: string
+  observations?: string
+  registeredAt: string
 }
 
-export type PetFormData = Omit<Pet, 'id' | 'createdAt'>;
+export type PetStatus = "ativo" | "adotado"
+export type PetType = "cachorro" | "gato" | "pássaro"
