@@ -5,7 +5,7 @@ Edital 001/2026/SEPLAG - Analista TI Engenheiro da Computação (Sênior)
 📋 DADOS DO CANDIDATO
 Nome Completo: Genessy Assunção Souza
 
-CPF: 864.552.651-49
+CPF: 864.552.***-**
 
 Telefone: (65) 99288-9074
 
@@ -262,3 +262,4 @@ docker-compose up
 - [x] Componentização
 - [x] TypeScript
 - [x] Dockerização
+
